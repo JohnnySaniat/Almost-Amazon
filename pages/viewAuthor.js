@@ -13,7 +13,7 @@ const viewAuthor = (obj) => {
      <h5>${obj.first_name} ${obj.last_name} ${obj.favorite ? '<span class="badge bg-danger"><i class="fa fa-heart" aria-hidden="true"></i></span>' : ''}</h5>
      Author Email: <a href="mailto:${obj.email}">${obj.email}</a>
      <div class="mt-5">
-     <i id="edit-author-btn--${obj.firebaseKey}" class=" btn btn-info">EDIT AUTHOR</i>
+     <i id="update-author-btn--${obj.firebaseKey}" class=" btn btn-info">EDIT AUTHOR</i>
      <i id="delete-author--${obj.firebaseKey}" class="btn btn-danger">DELETE AUTHOR</i>
    </div>
    <hr>
