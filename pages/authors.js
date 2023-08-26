@@ -14,8 +14,11 @@ const showAuthors = (array) => {
   renderToDOM('#add-button', btnString);
 
   let domString = '';
-  array.forEach((item) => {
-    domString += `
+  if (array.length < 1) {
+    domString += 'No Authors Found';
+  } else {
+    array.forEach((item) => {
+      domString += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">${item.first_name} ${item.last_name}</h5>
@@ -29,7 +32,8 @@ const showAuthors = (array) => {
         ${''}` : ''} </p> </hr>
        </div>
      </div>`;
-  });
+    });
+  }
   renderToDOM('#store', domString);
 };
 
