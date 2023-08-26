@@ -101,6 +101,15 @@ const authorsByFavorite = () => new Promise((resolve, reject) => {
 });
 
 // TODO: STRETCH...SEARCH BOOKS
+const searchBooks = (searchValue) => new Promise((resolve, reject) => {
+  getBooks().then((booksArray) => {
+    const searchResults = booksArray.filter((book) => (
+      book.title.toLowerCase().includes(searchValue)
+      || book.description.toLowerCase().includes(searchValue)
+    ));
+    resolve(searchResults);
+  }).catch(reject);
+});
 
 export {
   getBooks,
@@ -110,4 +119,5 @@ export {
   getSingleBook,
   updateBook,
   authorsByFavorite,
+  searchBooks,
 };
