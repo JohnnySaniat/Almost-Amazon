@@ -103,8 +103,8 @@ const authorsByFavorite = () => new Promise((resolve, reject) => {
 });
 
 // TODO: STRETCH...SEARCH BOOKS
-const searchBooks = (searchValue) => new Promise((resolve, reject) => {
-  getBooks().then((booksArray) => {
+const searchBooks = (searchValue, uid) => new Promise((resolve, reject) => {
+  getBooks(uid).then((booksArray) => {
     const searchResults = booksArray.filter((book) => (
       book.title.toLowerCase().includes(searchValue)
       || book.description.toLowerCase().includes(searchValue)
