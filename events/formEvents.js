@@ -27,7 +27,7 @@ const formEvents = (user) => {
     }
 
     // TODO: CLICK EVENT FOR EDITING A BOOK
-    if (e.target.id.includes('edit-book-btn')) {
+    if (e.target.id.includes('update-book')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         title: document.querySelector('#title').value,
